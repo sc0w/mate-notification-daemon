@@ -75,8 +75,8 @@ get_work_area (NotifyStack  *stack,
         /* Defaults in case of error */
         rect->x = 0;
         rect->y = 0;
-        rect->width = gdk_screen_get_width (stack->screen);
-        rect->height = gdk_screen_get_height (stack->screen);
+        rect->width = WidthOfScreen (gdk_x11_screen_get_xscreen (stack->screen));
+        rect->height = HeightOfScreen (gdk_x11_screen_get_xscreen (stack->screen));
 
         if (workarea == None)
                 return FALSE;
